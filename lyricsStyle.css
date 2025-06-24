@@ -1,0 +1,111 @@
+/* 기본 테마는 이전 스타일과 대부분 동일합니다. */
+body {
+  margin: 0;
+  font-family: 'Pretendard', sans-serif;
+  color: white;
+  background: linear-gradient(0deg, #ff0000, #ff7300, #fffb00, #48ff00, #00d5ff, #002bff, #7a00ff, #ff00c8);
+  background-size: 400% 400%;
+  animation: gradient-animation 3s ease infinite;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 100%; }
+  50% { background-position: 100% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+/* --- 가사 검색기 전용 스타일 --- */
+.lyrics-finder-container {
+  width: 90%;
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 30px 40px;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#lyrics-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+#lyrics-form input {
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #f4f4f4;
+}
+
+#lyrics-form button {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#lyrics-form button:hover {
+  background-color: #0056b3;
+}
+
+#result-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #212529;
+  border-radius: 10px;
+  min-height: 150px;
+  text-align: left;
+  white-space: pre-wrap; /* 가사의 줄바꿈을 그대로 표시 */
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+#result-container.loading::before {
+    content: '가사를 찾는 중...';
+    color: #888;
+}
+
+#result-container .placeholder {
+    color: #888;
+    text-align: center;
+    line-height: 110px;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.3);
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.2s ease;
+}
+
+.back-link:hover {
+    background-color: rgba(0,0,0,0.5);
+    text-decoration: underline;
+}

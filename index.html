@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노래 가사 검색</title>
+    <link rel="stylesheet" href="lyricsStyle.css">
+</head>
+<body>
+    <div id="app">
+        <div class="lyrics-finder-container">
+            <h1>노래 가사 검색</h1>
+            <p>노래 제목과 가수를 입력하고 가사를 찾아보세요.</p>
+            <form id="lyrics-form">
+                <input type="text" id="song-title" placeholder="노래 제목" required>
+                <input type="text" id="song-artist" placeholder="가수" required>
+                <button type="submit">가사 검색</button>
+            </form>
+            <div id="result-container">
+                <p class="placeholder">여기에 검색 결과가 표시됩니다.</p>
+            </div>
+        </div>
+        <a href="index.html" class="back-link">← 메인 페이지로 돌아가기</a>
+    </div>
+    <script type="module" src="/src/lyricsmain.js"></script>
+</body>
+</html>
